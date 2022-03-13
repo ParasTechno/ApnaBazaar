@@ -1,0 +1,28 @@
+{% extends "index.html" %} {% load static %} {% block tittle %}
+<title>About</title>
+{% endblock %} {% block body %}
+<div class="section1">
+    <div class="container1">
+        <div class="content-section1">
+            <div class="title1">
+                <h1>About Us</h1>
+            </div>
+            <div class="content1">
+                <h5>ApnaBazaar Online Shopping Website</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, ducimus voluptatum quibusdam mollitia obcaecati natus autem dolorum ex reprehenderit sunt animi id eos, aspernatur totam nisi perferendis, tenetur repudiandae facilis?</p>
+                <div class="button1">
+                    <a href="">Read More</a>
+                </div>
+            </div>
+            <div class="social01">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="image-section1">
+            <img src="{% static 'images/b7.jpg' %}" alt="founder img">
+        </div>
+    </div>
+</div>
+{% endblock %}

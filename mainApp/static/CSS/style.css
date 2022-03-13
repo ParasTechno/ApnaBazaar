@@ -1,0 +1,267 @@
+/*---------------------------single product section------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section1 {
+    width: 100%;
+    min-height: 100vh;
+    background-color: cornsilk;
+}
+
+.container1 {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.content-section1 {
+    float: left;
+    width: 55%;
+}
+
+.image-section1 {
+    float: right;
+    width: 40%;
+}
+
+.image-section1 img {
+    width: 100%;
+    height: auto;
+}
+
+.content-section1 .title1 {
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.content-section1 .contect1 h5 {
+    margin-top: 20px;
+    color: #5d5d5d;
+    font-size: 20px;
+}
+
+.content-section1 .content1 p {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.content-section1 .content1 .button1 {
+    margin-top: 30px;
+}
+
+.content-section1 .content1 .button1 a {
+    background-color: #fe5b0f;
+    color: #fff;
+    padding: 12px 40px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    box-shadow: 3px 3px 10px #fff, -3px -3px 10px #fff;
+}
+
+.content-section1 .content1 .button1 a:hover {
+    box-shadow: 3px 3px 5px rgb(0, 247, 255), -3px -3px 5px rgb(0, 247, 255);
+    background-color: #333;
+    color: #fff;
+}
+
+.content-section1 .social01 {
+    margin: 40px 40px;
+}
+
+.content-section1 .social01 i {
+    color: red;
+    font-size: 30px;
+    padding: 0px 10px;
+}
+
+.content-section1 .social01 i:hover {
+    color: #3d3d3d;
+}
+
+@media screen and (max-width: 768px) {
+    .container1 {
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding-top: 50px;
+    }
+    .content-section1 {
+        float: none;
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .image-section1 {
+        float: none;
+        width: 100%;
+    }
+    .image-section1 img {
+        width: 100%;
+        display: block;
+        height: auto;
+        margin: auto;
+    }
+    .content-section1 .title1 {
+        text-align: center;
+        font-size: 18px;
+    }
+    .content-section1 .contect1 .button1 {
+        text-align: center;
+    }
+    .content-section1 .contect1 .button1 a {
+        padding: 9px 30px;
+    }
+    .content-section1 .social01 {
+        text-align: center;
+    }
+}
+
+.col-md-7 {
+    color: #555;
+}
+
+.col {
+    flex-basis: 40%;
+}
+
+.slider {
+    height: 50vh;
+    display: flex;
+}
+
+.product img {
+    height: 10vh;
+    margin-bottom: 9px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.product img:hover {
+    opacity: 1;
+}
+
+.preview img {
+    height: 100%;
+    padding-left: 30px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.p1 {
+    font-weight: 500;
+    color: #333;
+}
+
+.brand {
+    background: #008000;
+    width: fit-content;
+    color: #fff;
+    font-size: 20px;
+    padding: 2px 5px;
+}
+
+h3 {
+    font-size: 45px;
+    color: red;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    text-shadow: 5px 5px 10px #333;
+}
+
+.stock {
+    display: flex;
+    color: #333;
+    height: 5px;
+    font-weight: 500;
+}
+
+.cat {
+    color: #333;
+    font-size: 16px;
+}
+
+.price {
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+input {
+    width: 30px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cartbtn,
+.wishlist {
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #fe5b0f;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.cartbtn .fa {
+    margin-right: 10px;
+}
+
+.cartbtn:hover {
+    transition: .5s;
+    color: #fff;
+    background-color: green;
+}
+
+.wishlist:hover {
+    transition: .5s;
+    color: #fff;
+    background-color: red;
+}
+
+input {
+    width: 200px;
+}
+
+.card {
+    border: none;
+    outline: none;
+    box-shadow: 8px 6px 89px -65px rgba(0, 0, 0, 3), -8px -6px 89px -65px rgba(0, 0, 0, 3);
+}
+
+.card p {
+    color: gray;
+}
+
+.circle {
+    height: 70px;
+    width: 70px;
+    background-color: lightgray;
+    color: black;
+    padding: 12px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 30px;
+    border-radius: 50%;
+}

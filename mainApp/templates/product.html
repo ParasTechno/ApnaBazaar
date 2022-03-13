@@ -1,0 +1,69 @@
+{% extends 'index.html' %} {% load static %} {% block tittle %}
+<title>product page</title>
+{% endblock %} {% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <h1 class="bg-dark p-2 text-light text-center">Single Product Section</h1>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+            <div class="col-md-12 mt-3">
+                <div class="col">
+                    <div class="slider">
+                        <div class="product m-3">
+                            <img src={{Product.pic1.url}} class="d-block w-100" width="10%" alt="img" onclick="clickme(this)">
+                            <img src={{Product.pic2.url}} class="d-block w-100" width="10%" alt="img" onclick="clickme(this)">
+                            <img src={{Product.pic3.url}} class="d-block w-100" width="10%" alt="img" onclick="clickme(this)">
+                            <img src={{Product.pic4.url}} class="d-block w-100" width="10%" alt="img" onclick="clickme(this)">
+                        </div>
+                        <div class="preview mt-3">
+                            <img src={{Product.pic1.url}} width="100%" height="500px" class="d-block w-100" id="imagebox" alt="img">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+            <div class="col-md-7">
+                <div class="col">
+                    <div class="content">
+                        <p class="brand">Brand:&nbsp; {{Product.brand}} </p>
+                        <h3>{{Product.name}} </h3>
+                        <p class="cat p1">MainCategory:&nbsp;&nbsp;&nbsp;&nbsp; {{Product.maincat.name}} </p>
+                        <p class="cat p1">Product:&nbsp;&nbsp;&nbsp;&nbsp; {{Product.subcat.name}} </p>
+                        <div class="stock">Availability:&nbsp;&nbsp;&nbsp;&nbsp; {% if Product.stock %}
+                            <p class="p1">In Stock</p>
+                            {% else %}
+                            <p class="p1">Out Of Stock</p>
+                            {% endif %}
+                        </div>
+                        <p class="price">
+                            <p class='p1'>Discount:&nbsp;&nbsp;&nbsp;&nbsp; {{Product.discount}} %</p>
+                            <p class='p1'>Price:&nbsp;&nbsp;&nbsp;&nbsp; <strike>Rs
+                            {{Product.basePrice}}</strike>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs{{Product.finalPrice}}</p>
+                            <p class="p1">Size:&nbsp;&nbsp;&nbsp;&nbsp; {{Product.size}} </p>
+                            <p class="p1">Color:&nbsp;&nbsp;&nbsp;&nbsp; {{Product.color}} </p>
+                             
+                            <form action="#" method="post">
+                                {% csrf_token %}
+                            <p class="p1">Quantity: &nbsp;&nbsp;&nbsp;&nbsp; 
+                                <input type="number" name="q" class="form-control" min="1" value="1"></p>
+                            <button class="cartbtn" type="submit"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                            <a href="/wishlist/{{Product.id}}/" class="wishlist mt-1">Add to Wishlist</a>
+                        </p>
+                        <br>
+                        <br>
+                        <h5>{{Product.description}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

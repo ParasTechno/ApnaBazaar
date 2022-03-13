@@ -1,0 +1,46 @@
+{% extends 'index.html' %} {% load static %} {% block tittle %}
+<title>Shop page</title>
+{% endblock %} {% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <h1 class="bg-dark p-2 text-light text-center">Shop Section</h1>
+        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 col-xs-12">
+            <div class="list-group">
+                <h6 class="bg-primary text-light p-2">Main-Category</h6>
+                <a href="/shop/all/{{SC}}/{{BR}}/" class="list-group-item list-group-item-action">All</a> {% for i in Maincat %}
+                <a href="/shop/{{i.name}}/{{SC}}/{{BR}}/" class="list-group-item list-group-item-action">{{i.name}}</a> {% endfor %}
+            </div>
+
+            <div class="list-group mt-3">
+                <h6 class="bg-primary text-light p-2">Sub-Category</h6>
+                <a href="/shop/{{MC}}/all/{{BR}}/" class="list-group-item list-group-item-action">All</a> {% for i in Subcat %}
+                <a href="/shop/{{MC}}/{{i.name}}/{{BR}}/" class="list-group-item list-group-item-action">{{i.name}}</a> {% endfor %}
+            </div>
+
+            <div class="list-group mt-3">
+                <h6 class="bg-primary text-light p-2">Brand</h6>
+                <a href="/shop/{{MC}}/{{SC}}/all/" class="list-group-item list-group-item-action">All</a> {% for i in Brand %}
+                <a href="/shop/{{MC}}/{{SC}}/{{i.name}}/" class="list-group-item list-group-item-action">{{i.name}}</a> {% endfor %}
+            </div>
+
+        </div>
+        <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-8 col-sm-6 col-xs-12">
+            <div class="row">
+                {% for i in Data %}
+                <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+                    <div class="card mt-2 mb-1 " style="border-radius: 20px; box-shadow:3px 3px 10px #333;">
+                        <img src={{i.pic1.url}} class="card-img-top" style="border-radius: 20px; width:100%;" height="250px" alt="picture">
+                        <div class="card-body">
+                            <h5 class="card-title" style="height: 50px;">{{i.name}}</h5>
+                            <p class="card-text"><strike>Rs
+                                    {{i.basePrice}}</strike> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs{{i.finalPrice}}</p>
+                            <a href="/product/{{i.id}}/" class="btn btn-danger text-light w-100" style="border-radius: 20px;">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

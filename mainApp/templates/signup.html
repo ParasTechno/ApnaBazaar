@@ -1,0 +1,57 @@
+{% extends 'index.html' %} {% load static %} {% block tittle %}
+<title>login page</title>
+{% endblock %} {% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <h1 class="bg-dark p-2 text-light text-center">SignUp Section</h1>
+
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <img src="{% static '../static/images/signup.jpg' %}" height="600px" class="w-100 " alt="">
+
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            {% for i in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{i}}
+            </div>
+            {% endfor %}
+            <form action="#" method="post" class="mt-2">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="name" class="form-label" style="font-size: 20px; font-weight:500;">Name</label>
+                    <input type="text" class="form-control" style="text-align: left;" name="name" placeholder="Enter Your Name">
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label" style="font-size: 20px; font-weight:500;">User Name</label>
+                    <input type="text" class="form-control" style="text-align: left;" name="username" placeholder="Enter User Name to login">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label" style="font-size: 20px; font-weight:500;">Email</label>
+                    <input type="email" class="form-control" style="text-align: left;" name="email" placeholder="Enter  Email Id">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label" style="font-size: 20px; font-weight:500;">Phone</label>
+                    <input type="text" class="form-control" style="text-align: left;" name="phone" placeholder="Enter Phone Number">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label" style="font-size: 20px; font-weight:500;">Password</label>
+                    <input type="password" class="form-control" style="text-align: left;" name="password" placeholder="Enter the Password">
+                </div>
+                <div class="mb-3">
+                    <label for="actype" class="form-label" style="font-size: 20px; font-weight:500;">Account Type</label>
+                    <select name="actype" class="form-control">
+                         <option value="seller">Seller</option>
+                         <option value="buyer">Buyer</option>
+                     </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-2">SignUp</button>
+                <a href="/login/">All Ready Account?Login</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

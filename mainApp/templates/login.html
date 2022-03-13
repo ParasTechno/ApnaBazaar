@@ -1,0 +1,38 @@
+{% extends 'index.html' %} {% load static %} {% block tittle %}
+<title>login page</title>
+{% endblock %} {% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <h1 class="bg-dark p-2 text-light text-center">Login Section</h1>
+
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <img src="{% static '../static/images/login.jpg' %}" class="w-100" alt="">
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            {% for i in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{i}}
+            </div>
+            {% endfor %}
+            <form action="#" method="post" class="mt-2">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="username" class="form-label" style="font-size: 20px; font-weight:500;">User Name</label>
+                    <input type="text" class="form-control" style="text-align: left;" name="username" placeholder="Enter User Name to login">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label" style="font-size: 20px; font-weight:500;">Password</label>
+                    <input type="password" class="form-control" style="text-align: left;" name="password" placeholder="Enter the Password">
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-2">Login</button>
+                <a href="/signup/">New User?Sign UP</a>
+                <a href="/forgetPassword/">forgetPassword</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}
